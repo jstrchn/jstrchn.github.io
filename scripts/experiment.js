@@ -189,16 +189,7 @@ timeline.push(debrief_block);
 function sendData(data){
    $.ajax({
      url: 'https://jameswastrachan.000webhostapp.com/sendData.php',
-     async: false,
-     type: "POST",
-     dataType: "json",
-     data: JSON.stringify(data),
-     success: function (result) {
-       JSON.parse(result);
-     },
-     error: function (xhr, ajaxOptions, thrownError) {
-       console.log(xhr);
-      }
+     data: JSON.stringify(data)
    });
 }
 
