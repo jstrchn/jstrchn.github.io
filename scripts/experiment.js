@@ -188,9 +188,10 @@ timeline.push(debrief_block);
 
 function sendData(data){
    $.ajax({
-      url: 'scripts/sendData.php',
-      data: JSON.stringify(data),
-      success: function(output) { console.log(output); } // write the result to javascript console
+     type: 'GET',
+     url: 'scripts/sendData.php',
+     data: JSON.stringify(data),
+     success: function(output) { console.log(output); } // write the result to javascript console
    });
 }
 
