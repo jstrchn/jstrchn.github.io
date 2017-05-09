@@ -1,20 +1,20 @@
 var images = {
   colour_shape: ['Stimuli/bottle_clear.png', 'Stimuli/bottle_odd.png', 'Stimuli/bottle_green1.png', 'Stimuli/bottle_green2.png'],
-  colour_orientation: ['Stimuli/greenUp.jpg', 'Stimuli/orangeDown.jpg', 'Stimuli/orangeUp.jpg', 'Stimuli/orangeUp.jpg'],
-  colour_size: ['Stimuli/yellow.jpg', 'Stimuli/green_big.jpg', 'Stimuli/green_small.jpg', 'Stimuli/green_small.jpg'],
-  shape_orientation: ['Stimuli/cup_odd.png', 'Stimuli/cup_plain1.png', 'Stimuli/cup_plain2.jpg', 'Stimuli/cup_plain2.jpg'],
-  shape_size: ['Stimuli/circle.jpg', 'Stimuli/triangle_big.jpg', 'Stimuli/triangle_small.jpg', 'Stimuli/triangle_small.jpg'],
-  shape_number: ['Stimuli/triangle.jpg', 'Stimuli/circle_double.jpg', 'Stimuli/circle_single.jpg', 'Stimuli/circle_single.jpg'],
-  number_colour: ['Stimuli/blue_single.jpg', 'Stimuli/blueRed.jpg', 'Stimuli/blueWhite1.jpg', 'Stimuli/blueWhite2.jpg'],
-  number_size: ['Stimuli/little_double.jpg','Stimuli/big_single.jpg',  'Stimuli/little_single.jpg', 'Stimuli/little_single.jpg'],
-  instrumentType_orchestra: ['Stimuli/flute.jpg', 'Stimuli/guitar.jpg', 'Stimuli/violin.jpg', 'Stimuli/cello.jpg'],
-  letter_familiarity: ['Stimuli/Nassau.jpg', 'Stimuli/London.jpg', 'Stimuli/Luanda.jpg', 'Stimuli/Lusaka.jpg'],
-  status_familiarity: ['Stimuli/Poland.jpg', 'Stimuli/Paris.jpg', 'Stimuli/Pretoria.jpg', 'Stimuli/Perth.jpg'],
-  manMade_noWater: ['Stimuli/bath.jpg', 'Stimuli/mountain.jpg', 'Stimuli/river.jpg', 'Stimuli/lake.jpg'],
-  gender_letter: ['Stimuli/Adam.jpg', 'Stimuli/Emma.jpg', 'Stimuli/Anna.jpg', 'Stimuli/Alice.jpg'],
-  meaning_wordType: ['Stimuli/door.jpg', 'Stimuli/eat.jpg', 'Stimuli/bread.jpg', 'Stimuli/cheese.jpg'],
-  deadLang_currentLang: ['Stimuli/latin.jpg', 'Stimuli/english.jpg', 'Stimuli/spanish.jpg', 'Stimuli/french.jpg'],
-  flying_engine: ['Stimuli/helicopter.jpg', 'Stimuli/bicycle.jpg', 'Stimuli/car.jpg', 'Stimuli/bus.jpg']
+  colour_orientation: ['Stimuli/greenUp.png', 'Stimuli/orangeDown.png', 'Stimuli/orangeUp.png', 'Stimuli/orangeUp.png'],
+  colour_size: ['Stimuli/yellow.png', 'Stimuli/green_big.png', 'Stimuli/green_small.png', 'Stimuli/green_small.png'],
+  shape_orientation: ['Stimuli/cup_odd.png', 'Stimuli/cup_plain1.png', 'Stimuli/cup_plain2.png', 'Stimuli/cup_plain2.png'],
+  shape_size: ['Stimuli/circle.png', 'Stimuli/triangle_big.png', 'Stimuli/triangle_small.png', 'Stimuli/triangle_small.png'],
+  shape_number: ['Stimuli/triangle.png', 'Stimuli/circle_double.png', 'Stimuli/circle_single.png', 'Stimuli/circle_single.png'],
+  number_colour: ['Stimuli/blue_single.png', 'Stimuli/blueRed.png', 'Stimuli/blueWhite1.png', 'Stimuli/blueWhite2.png'],
+  number_size: ['Stimuli/little_double.png','Stimuli/big_single.png',  'Stimuli/little_single.png', 'Stimuli/little_single.png'],
+  instrumentType_orchestra: ['Stimuli/flute.png', 'Stimuli/guitar.png', 'Stimuli/violin.png', 'Stimuli/cello.png'],
+  letter_familiarity: ['Stimuli/Nassau.png', 'Stimuli/London.png', 'Stimuli/Luanda.png', 'Stimuli/Lusaka.png'],
+  status_familiarity: ['Stimuli/Poland.png', 'Stimuli/Paris.png', 'Stimuli/Pretoria.png', 'Stimuli/Perth.png'],
+  manMade_noWater: ['Stimuli/bath.png', 'Stimuli/mountain.png', 'Stimuli/river.png', 'Stimuli/lake.png'],
+  gender_letter: ['Stimuli/Adam.png', 'Stimuli/Emma.png', 'Stimuli/Anna.png', 'Stimuli/Alice.png'],
+  meaning_wordType: ['Stimuli/door.png', 'Stimuli/eat.png', 'Stimuli/bread.png', 'Stimuli/cheese.png'],
+  deadLang_currentLang: ['Stimuli/latin.png', 'Stimuli/english.png', 'Stimuli/spanish.png', 'Stimuli/french.png'],
+  flying_engine: ['Stimuli/helicopter.png', 'Stimuli/bicycle.png', 'Stimuli/car.png', 'Stimuli/bus.png']
 };
 
 var keys = Object.keys( images );
@@ -119,7 +119,7 @@ var debrief_block = {
 
 var reminder = {
   type: "vsl-grid-scene",
-  stimuli: [['Stimuli/1.jpg', 'Stimuli/2.jpg'], ['Stimuli/3.jpg', 'Stimuli/4.jpg']],
+  stimuli: [['Stimuli/1.png', 'Stimuli/2.png'], ['Stimuli/3.png', 'Stimuli/4.png']],
   image_size: [250,250],
   timing_post_trial: 0,
   timing_stim: 500
@@ -141,7 +141,7 @@ var waiting_forP2 = {
 
 var fixation = {
   type: 'single-stim', 
-  stimulus: 'Stimuli/face1.jpg',
+  stimulus: 'Stimuli/face1.png',
   timing_stim: 1000,
   timing_response: 1000,
   choices: 'none',
@@ -186,16 +186,14 @@ for(i = 0; i < (trials.length); i++) {
 timeline.push(questionnaire1);
 timeline.push(debrief_block);
 
-function saveData(data){
-   var data_table = "my_experiment_table"; // change this for different experiments
+function sendData(data){
    $.ajax({
       type:'post',
       cache: false,
-      url: 'save.php', // change this to point to your php file.
+      url: 'scripts/sendData.php', // change this to point to your php file.
       // opt_data is to add additional values to every row, like a subject ID
       // replace 'key' with the column name, and 'value' with the value.
       data: {
-          table: data_table,
           json: JSON.stringify(data)
       },
       success: function(output) { console.log(output); } // write the result to javascript console
@@ -209,6 +207,6 @@ function saveData(data){
     fullscreen: true,
     on_finish: function(data) {
       console.log(jsPsych.data.dataAsCSV());
-      saveData(jsPsych.data.dataAsCSV()) 
+      sendData(jsPsych.data.dataAsCSV()) 
     }
   })
