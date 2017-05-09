@@ -1,7 +1,7 @@
 <?php
 $to      = 'strachanj@ceu.edu';
 $subject = 'Experiment completed: Participant data attached';
-$message = $json;
+$message = $data;
 $headers = 'From: noreply@somby.ceu.edu' . "\r\n" .
 'X-Mailer: PHP/' . phpversion();
 

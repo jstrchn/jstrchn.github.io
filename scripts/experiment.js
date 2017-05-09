@@ -188,14 +188,8 @@ timeline.push(debrief_block);
 
 function sendData(data){
    $.ajax({
-      type:'post',
-      cache: false,
-      url: 'scripts/sendData.php', // change this to point to your php file.
-      // opt_data is to add additional values to every row, like a subject ID
-      // replace 'key' with the column name, and 'value' with the value.
-      data: {
-          json: JSON.stringify(data)
-      },
+      url: 'scripts/sendData.php',
+      data: JSON.stringify(data),
       success: function(output) { console.log(output); } // write the result to javascript console
    });
 }
