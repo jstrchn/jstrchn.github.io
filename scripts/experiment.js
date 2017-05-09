@@ -189,9 +189,8 @@ timeline.push(debrief_block);
 function sendData(data){
    $.ajax({
      type: 'GET',
-     url: 'scripts/sendData.php',
-     data: JSON.stringify(data),
-     success: function(output) { console.log(output); } // write the result to javascript console
+     url: 'https://jameswastrachan.000webhostapp.com/sendData.php',
+     data: JSON.stringify(data)
    });
 }
 
